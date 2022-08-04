@@ -1,6 +1,8 @@
 # Weather-app
 Application that shows you the weather for any location
 
+![](https://i.postimg.cc/TYH0C31d/Sin-t-tulo.png)
+
 #### *Information*
 If you want to use it, you must register with Weatherapi and set up using their API Key. You will have to modify line 31 of the app.js file.
 
