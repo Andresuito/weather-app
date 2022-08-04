@@ -13,12 +13,20 @@ const TimeZoneOutput = document.querySelector('.tz');
 const form = document.getElementById('locationInput');
 const search = document.querySelector('.search');
 const btn = document.querySelectorAll('.submit');
+const token = 'YOU TOKEN';
 
 let cityInput = "Huelva";
 
 form.addEventListener('submit', (e) => {
     if (search.value.length == 0) {
-        alert('Please type in a city name');
+        Swal.fire({
+            position: 'bottom-left',
+            width: '25em',
+            text: 'Type the name of a city',
+            timer: 2000,
+            showConfirmButton: false,
+            timerProgressBar: true
+        })
     } else {
         cityInput = search.value;
         fetchWeatherData();
@@ -28,7 +36,7 @@ form.addEventListener('submit', (e) => {
 });
 
 function fetchWeatherData() {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=YOUR API KEY&q=${cityInput}
+    fetch(`http://api.weatherapi.com/v1/current.json?key=${token}&q=${cityInput}
     `)
 
         .then(response => response.json())
